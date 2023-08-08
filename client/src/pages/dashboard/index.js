@@ -119,10 +119,10 @@ export default function Footer() {
         </div>
 		<div className="container">
 			<div className="jobs">
-				{/* {data.map((item, index) => (
+				 {data.map((item, index) => (
 					<Job key={index} data={item} />
-				))} */}
-        {console.log(data)};
+				))} 
+        
 			</div>
 		</div>
       </div>
