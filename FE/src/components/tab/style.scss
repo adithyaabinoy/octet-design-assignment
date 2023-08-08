@@ -1,0 +1,84 @@
+.tab {
+    height: 112px;
+    max-width: 270px;
+    width: 24%;
+    border: 1px solid #EAEAEA;
+    border-radius: 8px;
+    background-color: white;
+    position: relative;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    @media screen and (max-width: 991px) {
+        height: 100px;
+        border-radius: 6px; 
+    }
+    @media screen and (max-width: 767px) {
+        width: 48%;
+        height: 93px;
+    }
+    &::after {
+        position: absolute;
+        height: 7px;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        content: '';
+        background: #B9ECD4;
+        @media screen and (max-width: 991px) {
+            height: 5px;  
+        }
+    }
+    &:nth-child(2) {
+        &::after {
+            background: #ECD3B9;
+        }
+    }
+    &:nth-child(3) {
+        &::after {
+            background: #ECB9B9;
+        }
+    }
+    &:nth-child(4) {
+        &::after {
+            background: #8C97AB;
+        }
+    }
+    .count {
+        font-family: 'PT Sans';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 28px;
+        color: #364154;
+        margin-bottom: 8px;
+        @media screen and (max-width: 991px) {
+            font-size: 20px;
+            line-height: 24px;
+            margin-bottom: 5px;
+        }
+        @media screen and (max-width: 767px) {
+            font-size: 18px;
+            line-height: 20px;
+            margin-bottom: 4px;
+        }
+    }
+    .tab-title {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        @media screen and (max-width: 991px) {
+            padding: 0 10px;
+        }
+    }
+    .name {
+        color: #5E6676;
+        font-family: 'PT Sans';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 19px;
+    }
+}

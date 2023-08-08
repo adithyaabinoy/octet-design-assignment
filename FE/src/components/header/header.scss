@@ -1,0 +1,248 @@
+@import "../../theme/color.scss";
+.header {
+    padding: 20px 0;
+    position: relative;
+    @media screen and (max-width: 991px) {
+        padding: 14px 0;
+    }
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 1306px;
+        margin: 0 auto;
+        align-items: center;
+        @media screen and (max-width: 991px) {
+            flex-wrap: wrap;
+        }
+        .toggle {
+            cursor: pointer;
+            overflow: hidden;
+            width: 35px;
+            height: 35px;
+            background: #fff;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px 0 rgb(192, 192, 192);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: auto;
+            display: none;
+            @media screen and (max-width: 991px) {
+                display: flex;
+            }
+          }
+          
+          .line-toggle {
+            position: absolute;
+            display: block;
+            width: 20px;
+            height: 3px;
+            background: #000;
+            border-radius: 5px;
+            transition: all .6s;
+          }
+          
+          .line-toggle:first-child {
+            transform: translateY(-7px) translateX(-2px);
+            width: 16px;
+            transition-delay: 0s;
+          }
+          
+          .toggle .line-toggle:nth-child(2) {
+            transition-delay: .12s;
+          }
+          
+          .line-toggle:last-child {
+            transform: translateY(7px) translateX(-3px);
+            width: 14px;
+            transition-delay: 0s;
+          }
+          
+          .toggle.activate .line-toggle:first-child {
+            background: #DC832D;
+            transform: translateY(0) translateX(0) rotate(45deg);
+            width: 20px;
+            height: 3px;
+            transition-delay: .1s;
+          }
+          
+          .toggle.activate .line-toggle:nth-child(2) {
+            transform: translateX(110px);
+            transition-delay: 0s;
+          }
+          
+          .toggle.activate .line-toggle:last-child {
+            background: #DC832D;
+            transform: translateY(0) translateX(0) rotate(314deg);
+            width: 20px;
+            height: 3px;
+            transition-delay: .1s;
+          }
+        .navigation {
+            display: flex;
+            align-items: center;
+            padding-left: 0;
+            margin: 0;
+            margin-left: 49px;
+            list-style: none;
+            &.active {
+                left: 0;
+                transition: all .4s;
+            }
+            @media screen and (max-width: 991px) {
+                flex-direction: column;
+                margin-left: 0;
+                position: absolute;
+                top: 100%;
+                z-index: 1;
+                background: white;
+                width: 100%;
+                left: -100%;
+                height: 100vh;
+                box-shadow: 2px 0px 5px black;
+                align-items: flex-start;
+                padding: 20px;
+                transition: all .4s;
+            }
+            .list-item {
+                margin: 0 16px;
+                @media screen and (max-width: 991px) {
+                    margin: 0 0 10px;
+                }
+                &:first-child {
+                    margin-left: 0;
+                }
+                &:last-child {
+                    margin-right: 0;
+                }
+                a {
+                    color: $text;
+                    text-decoration: none;
+                    font-family: 'Lato', sans-serif;
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 17px;
+                    letter-spacing: 0em;
+                    position: relative;
+                    &::after {
+                        background-color: $primaryColor;
+                        height: 5px;
+                        width: 0;
+                        left: -5px;
+                        content: '';
+                        bottom: -26px;
+                        position: absolute;
+                        border-radius: 8px;
+                        transition: all .3s;
+                        
+                    }
+                    &.notification::before {
+                        background-color: #DB4B3F;
+                        height: 5px;
+                        width: 5px;
+                        right: -10px;
+                        content: '';
+                        top: -5px;
+                        position: absolute;
+                        border-radius: 50%;
+                    }
+                    &.active {
+                        font-weight: 700;
+                        &::after {
+                            width: calc(100% + 15px);
+                            transition: all .3s;
+                            @media screen and (max-width: 991px) {
+                                width: calc(100% + 45px);
+                                height: 3px;
+                                bottom: -6px;
+                            }
+                        }
+                    }
+                    &:hover::after {
+                        width: calc(100% + 15px);
+                        transition: all .3s;
+                        @media screen and (max-width: 991px) {
+                            width: calc(100% + 45px);
+                            height: 3px;
+                            bottom: -6px;
+                        }
+                    }
+                }
+            }
+        }
+        .actions {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+            @media screen and (max-width: 991px) {
+                width: 100%;
+                margin-top: 10px;
+            }
+            .MuiButton-root {
+                background-color: $primaryColor;
+                padding: 7px 31px 8px 24px;
+                font-family: 'Lato', sans-serif;
+                font-size: 13px;
+                font-weight: 700;
+                line-height: 16px;
+                letter-spacing: 0em;
+                text-transform: capitalize;
+                box-shadow: none;
+                border-radius: 3px;
+                position: relative;
+                margin-right: 31px;
+                overflow: hidden;
+                &::after {
+                    position: absolute;
+                    content: '';
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-image: url('../../assets/images/btn-path.png');
+                }
+                &:hover {
+                    background-color: orange;
+                }
+                @media screen and (max-width: 991px) {
+                    padding: 7px 24px 7px 20px;
+                    height: fit-content;
+                    line-height: 16px;
+                }
+            }
+        }
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            .MuiOutlinedInput-root {
+                svg {
+                    right: 0;
+                }
+                .MuiSelect-select {
+                    padding: 0;
+                    padding-right: 30px;
+                    font-family: 'Lato', sans-serif;
+                    font-size: 13px;
+                    font-weight: 700;
+                    line-height: 16px;
+                    letter-spacing: 0em;
+                    color: $text;
+                }
+                fieldset {
+                    border: none;
+                }
+            }
+            .avatar {
+                height: 26px;
+                width: 26px;
+                border-radius: 50%;
+                display: flex;
+                background: #e5eaf3;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+}

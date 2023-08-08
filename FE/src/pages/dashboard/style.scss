@@ -1,0 +1,194 @@
+@import "../../theme/color.scss";
+.home-page {
+    .container {
+        justify-content: space-between;
+        position: relative;
+        &.chart > * {
+            width: 100% !important;
+        }
+        .chart-container > div {
+            margin-left: -23px;
+        }
+        .apexcharts-text tspan {
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 16px;
+            color: #858789;
+        }
+    }
+    .page-header {
+        background-color: #122443;
+        height: 144px;
+        width: 100%;
+        position: relative;
+        padding: 25px 0;
+        box-sizing: border-box;
+        position: relative;
+        &::before {
+            position: absolute;
+            content: '';
+            left: 15px;
+            background-image: url(../../assets/images/design.png);
+            width: 41px;
+            height: 41px;
+            bottom: 16px;
+        }
+        &::after {
+            position: absolute;
+            content: '';
+            right: 15px;
+            background-image: url(../../assets/images/design.png);
+            width: 41px;
+            height: 41px;
+            top: 16px;
+            transform: rotate(180deg);
+        }
+        .tabs {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            position: absolute;
+            left: 0;
+            top: 55px;
+            @media screen and (max-width: 1200px) {
+                padding: 0 15px;
+            }
+            @media screen and (max-width: 767px) {
+                flex-wrap: wrap;
+                gap: 10px;
+                top: 90px;
+            }
+        }
+        h1 {
+            font-family: 'PT Sans', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 31px;
+            letter-spacing: 0em;
+            color: white;
+            @media screen and (max-width: 991px) {
+                font-size: 20px;
+                line-height: 28px;
+            }
+            @media screen and (max-width: 767px) {
+                margin-bottom: 10px;
+            }
+        }
+        .MuiButton-root {
+            background-color: $green;
+            padding: 7px 31px 8px 24px;
+            font-family: 'PT Sans', sans-serif;
+            font-weight: 700;
+            font-size: 13px;
+            line-height: 17px;
+            text-transform: capitalize;
+            box-shadow: none;
+            border-radius: 3px;
+            position: relative;
+            margin-right: 31px;
+            overflow: hidden;
+            &::after {
+                position: absolute;
+                content: '';
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: url('../../assets/images/btn-path-2.png');
+            }
+            &:hover {
+                background-color: lightseagreen;
+            }
+            @media screen and (max-width: 991px) {
+                padding: 7px 24px 7px 20px;
+                height: fit-content;
+                line-height: 16px;
+            }
+        }
+    }
+    .apexcharts-legend, .apexcharts-yaxis, .apexcharts-xaxis-tick, .apexcharts-gridline, .apexcharts-yaxis-texts-g {
+        display: none;
+    }
+    .chart-container {
+        border: 1px solid #EAEAEA;
+        border-radius: 6px;
+        background-color: white;
+        margin-bottom: 30px;
+        @media screen and (max-width: 767px) {
+            overflow-x: scroll;
+        }
+    }
+    .main-page {
+        @media screen and (max-width: 991px) {
+            padding: 65px 0 35px;
+        }
+        @media screen and (max-width: 767px) {
+            padding: 190px 0 35px;
+        }
+        padding: 79px 0 57px;
+        .jobs {
+            width: 100%;
+            @media screen and (max-width: 991px) {
+                overflow-x: scroll;
+                max-width: 100%;
+                position: relative;
+            }
+        }
+        h2 {
+            font-family: 'PT Sans';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 21px;
+            color: $text;
+            margin-bottom: 16px;
+        }
+        .MuiButtonGroup-root {
+            box-shadow: none;
+            .MuiButton-root {
+                background-color: white;
+                border: 1px solid #EAEAEA;
+                color: $text;
+                font-family: 'PT Sans';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 13px;
+                line-height: 17px;
+                padding: 4px 11px;
+                text-transform: none;
+                height: fit-content;
+            }
+        }
+        .select {
+            position: relative;
+            p {
+                font-family: 'PT Sans';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 13px;
+                line-height: 17px;
+                color: #364154;
+                position: absolute;
+                left: 9px;
+                top: 4px;
+                z-index: 1;
+            }
+            .MuiSelect-select {
+                padding: 4px 10px;
+                font-family: 'PT Sans';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 13px;
+                line-height: 17px;
+                padding-left: 60px;
+                padding-right: 32px;
+                background-color: white;
+            }
+            fieldset {
+                border-color: #EAEAEA;
+            }
+        }
+    }
+}
