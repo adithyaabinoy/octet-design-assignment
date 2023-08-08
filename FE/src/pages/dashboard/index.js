@@ -33,7 +33,8 @@ export default function Footer() {
 
   useEffect(() => {
     // Fetch hotel data from the API
-    fetch("https://practical-task-h82v.onrender.com/jobs/jobdata")
+    
+    fetch("https://octe.onrender.com/jobs/jobdata")
       .then((response) => response.json())
       .then((data) => {
         setData(data); // Set the hotel data
