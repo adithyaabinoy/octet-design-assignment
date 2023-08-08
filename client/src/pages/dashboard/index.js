@@ -30,10 +30,8 @@ export default function Footer() {
 	const ApexChartWrapper = ({ countReceived, countApplied }) => {
 		return <ApexChart countReceived={countReceived} countApplied={countApplied} />;
 	};
-
   useEffect(() => {
     // Fetch hotel data from the API
-    
     fetch("https://octe.onrender.com/jobs/jobdata")
       .then((response) => response.json())
       .then((data) => {
@@ -44,7 +42,6 @@ export default function Footer() {
         console.error("Error fetching data:", error);
       });
   }, []);
-
 	const [data, setData] = useState([]);
 	const [sortCriteria, setSortCriteria] = useState('');
 	const sortData = (array, criteria) => {
@@ -122,9 +119,10 @@ export default function Footer() {
         </div>
 		<div className="container">
 			<div className="jobs">
-				{data.map((item, index) => (
+				{/* {data.map((item, index) => (
 					<Job key={index} data={item} />
-				))}
+				))} */}
+        {console.log(data)};
 			</div>
 		</div>
       </div>
